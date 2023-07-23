@@ -1,8 +1,8 @@
-##Gravity Ball
+## Gravity Ball
 
 Gravity Ball is a Python project that serves as an introduction to Object-Oriented Programming using the Pythonista3 scene library. It is ideal for Python beginners seeking well-structured code examples that explain the core functions of scene.
 
-##Key Features:
+## Key Features:
 
 - iOS Compatibility
 - Dynamic Map Generation
@@ -10,7 +10,7 @@ Gravity Ball is a Python project that serves as an introduction to Object-Orient
 - Collision Management
 - Basic HUD
 
-##Main Goals:
+## Main Goals:
 
 - Readability
 - Code Style
