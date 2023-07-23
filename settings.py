@@ -1,6 +1,6 @@
 
 # Screen attributes
-BACKGROUND_COLOR = ""
+BACKGROUND_COLOR = "#caa36f"
 
 # Board generation attributes
 BOARD_DIMENSIONS = (9, 18)
