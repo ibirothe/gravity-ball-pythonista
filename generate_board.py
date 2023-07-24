@@ -1,7 +1,8 @@
 import random
+from collections import defaultdict
 
 def generate_random_board() -> list:
-    # Placeholder for future board maze generation.
+    """Placeholder for future board maze generation."""
     board = [
     "XXXXXXXXX",
     "XXXXXXXXX",
@@ -26,12 +27,8 @@ def generate_random_board() -> list:
 
 def sort_entity_positions(board) -> dict:
     """Sort objects and positions by iterating over a board."""
-    entity_positions = {}
+    entity_positions = defaultdict(list)
     for y, row in enumerate(board):
         for x, cell in enumerate(row):
-            if cell not in entity_positions.keys():
-                entity_positions[cell] = []
-                entity_positions[cell].append((x,y))
-            else:
-                entity_positions[cell].append((x,y))
-    return entity_positions
+            entity_positions[cell].append((x, y))
+    return dict(entity_positions)

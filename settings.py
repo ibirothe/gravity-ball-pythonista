@@ -5,6 +5,7 @@ BACKGROUND_COLOR = "#caa36f"
 # Board generation attributes
 BOARD_DIMENSIONS = (9, 18)
 BOARD_OFFSET = (-5, -15)
+BOARD_STICKINESS = 0.05
 
 # Tile attributes
 TILE_SIZE = 48
@@ -12,7 +13,7 @@ TILE_COLOR = "#ff956b"
 
 # Ball attributes
 BALL_SIZE = 20
-BALL_SPEED = 15
+BALL_SPEED = 13
 BALL_COLOR = "#806fac"
 
 # Coin attributes

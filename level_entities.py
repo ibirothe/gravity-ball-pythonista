@@ -1,6 +1,5 @@
 from scene import *
 from settings import *
-from abc import ABC, abstractmethod
 
 
 class Tile(ShapeNode):
