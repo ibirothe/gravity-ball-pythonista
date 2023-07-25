@@ -22,13 +22,15 @@ class Hole(ShapeNode):
     def __init__(self):
         """Initialize a Hole object."""
         super().__init__(ui.Path.oval(0, 0, HOLE_SIZE, HOLE_SIZE), fill_color=HOLE_COLOR)
+        self.stroke_color = HOLE_SEC_COLOR
         self.anchor_point = (0.5, 0.5)
         self.board_code = "H"
 
 
 class Ball(ShapeNode):
-    def __init__(self):
+    def __init__(self, pos = (0,0)):
         """Initialize the Ball object."""
-        super().__init__(ui.Path.oval(0, 0, BALL_SIZE, BALL_SIZE), fill_color=BALL_COLOR)
+        super().__init__(ui.Path.oval(pos[0], pos[1], BALL_SIZE, BALL_SIZE), fill_color=BALL_COLOR)
         self.anchor_point = (0.5, 0.5)
         self.board_code = "B"
+        self.reset_position = None
