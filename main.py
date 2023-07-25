@@ -151,6 +151,9 @@ class Game(Scene):
         self.fall_check()
         # Update the timer, if set
         self.timer.tick()
+        # Check for all coins being collected
+        if len(self.coins.children) == 0:
+            print("Level goal achieved.")
 
 
 if __name__ == '__main__':
