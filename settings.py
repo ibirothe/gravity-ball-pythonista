@@ -15,7 +15,7 @@ TILE_COLOR = "#ff956b"
 BALL_SIZE = 20
 BALL_SPEED = 13
 BALL_COLOR = "#806fac"
-RESET_TIME = 60 #frames
+RESET_TIME = 60 #ticks
 
 # Coin attributes
 COIN_SIZE = 10
@@ -30,3 +30,6 @@ HOLE_SEC_COLOR = "#4b553e"
 HOLE_LEVEL_REQ = 2
 HOLE_PROBABILITY = 0.25
 
+# Game rules
+HOLE_PENALTY = -300 #ticks
+LEVEL_TIME_MULTIPLYER = 3
