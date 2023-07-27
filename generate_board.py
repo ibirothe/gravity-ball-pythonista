@@ -2,10 +2,10 @@ import random
 from collections import defaultdict
 from settings import *
 
-def generate_random_board() -> list:
+def generate_random_board(level) -> list:
     """Generate a random board maze with entities."""
     carved_board = carve_board()
-    board_with_entities = set_entities(carved_board)
+    board_with_entities = set_entities(carved_board, level)
     board = add_borders(board_with_entities)
 
     return board
@@ -53,7 +53,7 @@ def add_borders(board):
     board_with_borders.append("X" * BOARD_DIMENSIONS[0])
     return board_with_borders
 
-def set_entities(board):
+def set_entities(board, level):
     """Set entities (Ball, Holes, and Coins) randomly on the maze board, using their set probabilities."""
     # Replacement of exactly one tile with a ball
     while True:
@@ -67,11 +67,15 @@ def set_entities(board):
         for x in range(BOARD_DIMENSIONS[0] - 2):
             entity_rng = random.randint(0, 100)
             # Replacement of tile with hole with set probabilty
-            if entity_rng < 100 * HOLE_PROBABILITY:
+            if entity_rng < 100 * HOLE_PROBABILITY and level >= HOLE_LEVEL_REQ:
                 if board[y][x] == "X":
                     board[y][x] = "H"
             # Replacement of space with coin with set probabilty
             if entity_rng < 100 * COIN_PROBABILITY:
                 if board[y][x] == " ":
                     board[y][x] = "C"
+            # Replacement of coin with life coin with set probabilty
+            if entity_rng < 100 * LIFE_COIN_PROBABILITY and level >= LIFE_COIN_LEVEL_REQ:
+                if board[y][x] == "C":
+                    board[y][x] = "L"
     return board

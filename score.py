@@ -1,5 +1,6 @@
 from scene import *
 from settings import *
+import random
 
 def setup_score_board_bg(parent):
     """This is a purely cosmetic method, that is not relevant for the game mechanics."""
@@ -21,12 +22,25 @@ def setup_score_board_bg(parent):
 
 class ScoreBoard(LabelNode):
     def __init__(self):
+        """Initialize a text label to display game information."""
         super().__init__("text", font=('Helvetica', 20))
-        self.anchor_point = (0, 1)
-        self.position = TILE_SIZE - 10, TILE_SIZE - 12
+        self.anchor_point = (0.5, 1)
+        self.position = min(get_screen_size())//2, TILE_SIZE - 12
+
 
     def update_text(self, time, score, level, balls):
-        self.text = f"⏳ {time:3} ✨ {score} 🕹 {level} 🏐 {balls}"
+        # Display game progress information
+        self.text = f"⏳ {time:03} ✨ {score:05} 🕹 {level:02} ❤️ {balls}"
+
+    def start_game(self):
+        # Display Start Text
+        self.text = "TAP SCREEN FOR NEW GAME"
 
     def game_over(self):
+        # Display Game Over Text
         self.text = "☠️ GAME OVER ☠️"
+
+    def game_paused(self):
+        # Display Pause Text
+        self.text = "⏸ PAUSED ⏸"
+

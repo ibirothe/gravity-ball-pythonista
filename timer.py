@@ -5,7 +5,7 @@ class TickTimer:
         self.ticks_left = ticks_left
 
     def set_ticks(self, ticks):
-        """Set the timer if it's not already set."""
+        """Set the timer."""
         if self.ticks_left == 0:
             self.ticks_left = ticks
 
